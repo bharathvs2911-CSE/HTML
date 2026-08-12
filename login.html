@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Login</title>
+<style>
+.coloring
+{
+background-color:#B1C2A3;
+}
+
+table
+{
+background-color:#FFFFFF;
+}
+
+td
+{
+background-color:#F4D5C2;
+}
+</style>
+</head>
+<script>
+function show()
+{
+var usernm = "Bharath";
+var pass = "bharath2911";
+
+var usern = document.getElementById("user").value;
+	
+	localStorage.setItem("usern",usern);
+	if(usern !== usernm)
+		{
+			alert("Enter correct username");
+			event.preventDefault();
+			return false;
+		}
+
+	
+var word = document.getElementById("word").value;
+	if(word !== pass)
+		{
+			alert("Enter correct password");
+			event.preventDefault();
+			return false;
+		}
+}
+</script>
+
+<body class="coloring">
+
+<form action="logindata.html">
+
+<center>
+<h1>Login Page</h1>
+<table border="1">
+
+<tr>
+<td colspan="2" align="center">
+Enter the details</td>
+</tr>
+
+
+<tr>
+<td><label>Username : </label></td>
+<td ><input type="text" name="user" id="user"></td>
+</tr>
+
+<tr>
+<td><label>Password : </label></td>
+<td><input type="Password" name="word" id="word"></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="login"  onclick="show()"></td>
+</tr>
+
+</table>
+</form>
+</center>
+</body>
+</html>
