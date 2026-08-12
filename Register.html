@@ -1,0 +1,167 @@
+<html>
+<head>
+<title> New Registeration Form </title>
+<style>
+.coloring
+{
+background-color:#004B87;
+}
+
+table
+{
+background-color:#FFFFFF;
+}
+
+td
+{
+background-color:#81D4FA;
+}
+
+</style>
+</head>
+<script>
+function check()
+{
+
+var fname = document.getElementById("name").value;
+
+	localStorage.setItem("fname",fname);
+
+	var first = fname.match(/[a-zA-Z]/);
+	
+	if(!first)
+	{
+	 	alert("Enter valid first name.");
+		return false;
+	}
+	
+var mname = document.getElementById("mname").value;
+
+	localStorage.setItem("mname",mname);
+
+	var mid = mname.match(/[a-zA-Z]/);
+	if(!mid)
+	{
+	 	alert("Enter valid mid name.");
+		return false;
+	}
+	
+var lname = document.getElementById("lname").value;
+
+	localStorage.setItem("lname",lname);
+	
+	var bvs = lname.match(/[a-zA-Z]/);
+	if(!bvs)
+	{
+	 	alert("Enter valid last name.");
+		return false;
+	}
+	
+	
+
+var mail = document.getElementById("mail").value;
+
+	localStorage.setItem("mail",mail);
+
+	var res = mail.match(/[a-zA-z0-9]+@[a-zA-Z]+.[a-zA-Z]/);
+	if(!res)
+	{
+		alert("Enter valid email.");
+	}
+	
+
+var date = document.getElementById("date").value;
+	alert(date);
+		
+var phone = document.getElementById("phone").value;
+
+	localStorage.setItem("phone",phone);
+
+	var num = phone.match(/[0-9]{10}/);
+	if(!num)
+	{
+		alert("Enter valid phone number.");
+		return false;
+	}
+	
+	
+var addres = document.getElementById("address").value;
+
+	localStorage.setItem("addres",addres);
+
+	var place = addres.match(/[a-zA-Z0-9]/);
+	if(!place)
+	{
+		alert("Enter valid address.");
+	}
+
+return true;
+}
+</script>
+<body class="coloring">
+<form action="data.html" onsubmit="return check()">
+<center>
+<h1 style="color: white;">Government Polytechnic Chamarajanagar</h1>
+<h2 style="color: white;">Departemnt of Computer science & engg</h2>
+<h3 style="color: white;">Register Form</h3>
+<table border="1" cellpadding="14">
+
+<tr>
+<td> First Name :</td>
+<td><input type="text" name="name" id="name" style="width:250px;height:35px;"></td>
+</tr>
+
+<tr>
+<td> Mid Name :</td>
+<td><input type="text" name="mname" id="mname" style="width:250px;height:35px;"></td>
+</tr>
+
+<tr>
+<td> Last Name :</td>
+<td><input type="text" name="lname" id="lname" style="width:250px;height:35px;"></td>
+</tr>
+
+<tr>
+<td>Email :</td>
+<td><input type="text" name="mail" id="mail" style="width:250px;height:35px;"></td>
+</tr>
+
+<tr>
+<td>DOB :</td>
+<td><input type="date" name="date" id="date" style="width:250px;height:35px;"></td>
+</tr>
+
+<tr>
+<td>Gender :</td>
+<td>
+<input type="radio" name="gender" id="male" checked value="male" requied>
+<label for="male">Male</label>
+
+<input type="radio" name="gender" id="female" value="female" requied>
+<label for="female">Female</label>
+
+<input type="radio" name="gender" id="other" value="other" requied>
+<label for="other">Other</label>
+</td>
+</tr>
+
+<tr>
+<td>Phone.no :</td>
+<td><input type="number" name="phone" id="phone" style="width:250px;height:35px;"></td>
+</tr>
+
+<tr>
+<td>Address :</td>
+<td><textarea input type="text" name="address" id="address" style="width:250px;height:35px;"></textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit" style="width:250px;height:35px;">
+</tr>
+
+</form>
+</table>
+</center>
+</body>
+</html>
